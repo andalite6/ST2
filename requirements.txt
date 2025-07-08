@@ -1,0 +1,57 @@
+import streamlit as st
+import pandas as pd
+import json
+import re
+import base64
+import subprocess
+import sys
+import os
+import asyncio
+import codecs
+from typing import List, Dict, Any, Optional
+from datetime import datetime
+from collections import defaultdict
+from io import BytesIO
+import matplotlib.pyplot as plt
+import seaborn as sns
+from reportlab.lib import colors
+from reportlab.lib.pagesizes import letter, A4
+from reportlab.platypus import SimpleDocTemplate, Table, TableStyle, Paragraph, Spacer, PageBreak
+from reportlab.lib.styles import getSampleStyleSheet
+from reportlab.lib.units import inch
+        requirements = """# Core dependencies
+streamlit>=1.32.0
+pandas>=2.2.0
+numpy>=1.26.0
+matplotlib>=3.8.0
+seaborn>=0.13.0
+reportlab>=4.1.0
+
+# Red teaming frameworks
+garak>=0.9.0
+deepteam>=0.1.0
+pyrit-ai>=0.1.0
+
+# API clients
+openai>=1.12.0
+anthropic>=0.18.0
+mistralai>=0.1.0
+
+# Utilities
+python-dotenv>=1.0.0
+aiohttp>=3.9.0
+requests>=2.31.0
+pyyaml>=6.0
+jsonlines>=4.0.0
+
+# Optional for advanced features
+transformers>=4.38.0
+torch>=2.2.0
+huggingface-hub>=0.20.0
+
+# Development
+pytest>=8.0.0
+black>=24.0.0
+isort>=5.13.0
+mypy>=1.8.0
+"""
